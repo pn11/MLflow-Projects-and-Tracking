@@ -1,0 +1,8 @@
+name: check_env
+
+entry_points:
+  main:
+    command: |
+      env | grep MLFLOW && \
+      python track.py --mlflow_run_id $MLFLOW_RUN_ID
+
